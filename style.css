@@ -1,0 +1,310 @@
+*{
+    box-sizing: border-box;
+    margin: 00;
+    padding: 00;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+    background: black;
+}
+
+/*  header div */
+.navbar{
+     display: flex;
+     justify-content: center;   
+     align-items: center;
+     font-size: 1.2rem;
+     height: 60px;
+     position: sticky;
+     top: 0;
+     z-index: 999;
+     
+}
+/* end of header div */
+
+/* container holding all elements in header div */
+.navbar_container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    max-width: 1300px;
+    width: 100%;
+    z-index: 1;
+    margin: 0  auto;
+    padding: 0 50px;
+}
+/* end of container holding all elements in header div */
+
+/* styling the logo in the header section */
+#navbar_logo{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
+    font: 2rem;
+    font-size: 45px;
+    font-weight: 1000;
+    background-image: linear-gradient(to top, #ff8844, #ffb199 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text ;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    
+}
+/*end of styling the logo in the header section */
+
+/* div holding all nav links */
+.navbar_menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    
+}
+/*  end of div holding all nav links */
+
+/*individual navbar link styling */
+.navbar_item{
+    height: 80px;
+    
+}
+/* end of individual navbar link styling */
+
+/* styling links inside the individual navbar item */
+.navbar_links{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 125px;
+     text-decoration: none;
+     height: 100%;
+     color: rgb(204, 189, 189);
+     transition: all 1s ease;
+     
+}
+/*end of  styling links inside the ndividual navbar item */
+
+
+/* styling of login button in the nav bar */
+.navbar_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    width: 100%;
+    
+}
+/* end of    styling of login button in the nav bar */
+
+
+/*  styling of login button */
+.navbar_menu .navbar_btn .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    margin-top: 20px;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    outline: none; 
+    background: white;
+    background: -webkit-linear-gradient(to right, #fcb845, #fd1d1d, #833ab4 );
+    background: linear-gradient(to right, #fcb845, #fd1d1d, #833ab4 );
+    color: #ffff;
+    transition: all 0.3s ease;
+}
+/* end  styling of login button */
+
+
+/*nav links hover effect*/
+.navbar_links:hover{
+    color: #9518fc;
+    transition: all 0.3s ease;
+    font-size: 19px;
+}
+/* end of nav links hover effect*/
+
+
+/* responsiveness for mobile */
+@media screen and (max-width:960px) {
+    
+    .navbar_container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px ;
+        padding: 0;
+        
+    }
+
+    /* menu of the mobile screen */
+    .navbar_menu{
+        display: grid;
+        grid-template-columns: auto; 
+        margin: 0;
+        
+        position: absolute;
+         top:  -1000px; 
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+    /*menu of the mobile screen */
+
+    /* menu of the mobile screen when active */
+    .navbar_menu.active {
+        top: 100%;
+        opacity: 1;
+        width: 100%;
+        transition: all 0.9s ease;
+        z-index: 99;
+        height: 60vh;
+        font-size: 1.6rem;
+        
+    }
+    /* end of menu of the mobile screen when active*/
+    
+    #navbar_logo{
+        padding-left: 25px;
+    }
+
+    .navbar_toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        
+    }
+    
+    .navbar_item{
+        width: 100%;
+    }
+    
+    .navbar_links{
+        text-align: center; 
+        padding: 2rem;
+        width: 100%;
+        display: table;
+        
+    }
+
+    .navbar_btn{
+        padding-bottom: 2rem;
+    }
+
+    .navbar_menu .navbar_btn .button{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 80%;
+         height: 80px;
+         margin: 0;
+    }
+
+    #mobile_menu{
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        background: white;
+        transform: translate(5% ,20%);
+    }
+    .navbar_toggle .bar{
+        display: block;
+        cursor: pointer;
+    } 
+
+    #mobile_menu.is-active .bar:nth-child(2){
+        transform:  translate(-8px) rotate(0deg);
+    }
+    #mobile_menu.is-active .bar:nth-child(1){
+        transform:  translate(8px) rotate(0deg);
+    }
+    #mobile_menu.is-active .bar:nth-child(3){
+        transform: translate(8px)  rotate(0deg);
+    }
+
+    .navbar_links:hover{
+        color: #9518fc;
+        transition: all 0.1s ease;
+        font-size: 33px;
+    }
+
+    /* hero section responsiveness */
+        .hero_container .hero_heading{
+            font-size: 60px;
+            margin :0 auto;
+            text-align: left;
+            
+            
+        }
+        .hero_container .hero_desc{
+            margin :0 auto;
+            font-weight: 1;
+             padding-left: 10%;
+            text-align: left;
+            font-size: 12px;
+            
+            
+        }
+    .hero_container .main_btn{
+        height: 45px;
+        width: 20px;
+        color: green;
+    }
+
+
+    /*end of  hero section responsiveness  */
+
+    
+}
+
+/* hero section */
+.hero_section{
+padding: 200px 0;
+}
+
+.hero_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero_heading{
+    font-size: 90px;
+    margin-bottom: 7px;
+    color: rgba(160, 190, 196, 0.849);
+    text-align: left;
+}
+
+.hero_container  .hero_desc{
+    font-size: 30px;
+    color: rgba(160, 190, 196, 0.849);
+}
+
+.hero_container .main_btn{
+    height: 80px;
+    width: 300px;
+    text-align: center;
+    border: 0;
+    font-size: 35px;
+    border-radius: 9px;
+    background: #833ab4;
+    background: -webkit-linear-gradient(to right, #fcb845, #fd1d1d, #833ab4 );
+    background: linear-gradient(to right, #fcb845, #fd1d1d, #833ab4 );
+    color: #ffff;
+    margin-top: 5vh;
+    cursor: pointer;
+}
+
+
+
+/* end of hero section */
